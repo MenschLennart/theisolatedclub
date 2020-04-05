@@ -7,7 +7,7 @@
         <p>
             The Isolated Club &copy; 2020 Lennart Stein. All rights reserved.
         </p>
-        <p>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <p><a target="_blank" href="https://icons8.com/icons/set/podcast">Podcast</a>, <a target="_blank" href="https://icons8.com/icons/set/apple-app-store">Apple App Store</a> and other icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
     </div>
 
     <!-- Imprint Modal -->
