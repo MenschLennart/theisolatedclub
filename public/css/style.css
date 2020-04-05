@@ -1,0 +1,237 @@
+
+h1.colorful {
+    font-size: 3.5rem;
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+footer {
+    font-size: .8rem;
+    text-align: left;
+}
+
+footer a {
+    font-weight: 600;
+}
+
+.footer-links {
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.games {
+    background-color: #A5CBFF;
+}
+
+.btn-games {
+    color: #FFFFFF;
+    background-color: #A5CBFF;
+    border-color: #73ABFA;
+}
+
+.btn-games:hover,
+.btn-games:focus,
+.btn-games:active,
+.btn-games.active,
+.open .dropdown-toggle.btn-games {
+    color: #FFFFFF;
+    background-color: #7DADF0;
+    border-color: #73ABFA;
+}
+
+.btn-games:active,
+.btn-games.active,
+.open .dropdown-toggle.btn-games {
+    background-image: none;
+}
+
+.btn-games.disabled,
+.btn-games[disabled],
+fieldset[disabled] .btn-games,
+.btn-games.disabled:hover,
+.btn-games[disabled]:hover,
+fieldset[disabled] .btn-games:hover,
+.btn-games.disabled:focus,
+.btn-games[disabled]:focus,
+fieldset[disabled] .btn-games:focus,
+.btn-games.disabled:active,
+.btn-games[disabled]:active,
+fieldset[disabled] .btn-games:active,
+.btn-games.disabled.active,
+.btn-games[disabled].active,
+fieldset[disabled] .btn-games.active {
+    background-color: #A5CBFF;
+    border-color: #73ABFA;
+}
+
+.btn-games .badge {
+    color: #A5CBFF;
+    background-color: #FFFFFF;
+}
+
+.sports {
+    background-color: #FFB9FD;
+}
+
+.btn-sports {
+    color: #FFFFFF;
+    background-color: #FFB9FD;
+    border-color: #F0ADEE;
+}
+
+.btn-sports:hover,
+.btn-sports:focus,
+.btn-sports:active,
+.btn-sports.active,
+.open .dropdown-toggle.btn-sports {
+    color: #FFFFFF;
+    background-color: #E890E5;
+    border-color: #F0ADEE;
+}
+
+.btn-sports:active,
+.btn-sports.active,
+.open .dropdown-toggle.btn-sports {
+    background-image: none;
+}
+
+.btn-sports.disabled,
+.btn-sports[disabled],
+fieldset[disabled] .btn-sports,
+.btn-sports.disabled:hover,
+.btn-sports[disabled]:hover,
+fieldset[disabled] .btn-sports:hover,
+.btn-sports.disabled:focus,
+.btn-sports[disabled]:focus,
+fieldset[disabled] .btn-sports:focus,
+.btn-sports.disabled:active,
+.btn-sports[disabled]:active,
+fieldset[disabled] .btn-sports:active,
+.btn-sports.disabled.active,
+.btn-sports[disabled].active,
+fieldset[disabled] .btn-sports.active {
+    background-color: #FFB9FD;
+    border-color: #F0ADEE;
+}
+
+.btn-sports .badge {
+    color: #FFB9FD;
+    background-color: #FFFFFF;
+}
+
+.foods {
+    background-color: #B3E69C;
+}
+
+.btn-foods {
+    color: #FFFFFF;
+    background-color: #B3E69C;
+    border-color: #A1E084;
+}
+
+.btn-foods:hover,
+.btn-foods:focus,
+.btn-foods:active,
+.btn-foods.active,
+.open .dropdown-toggle.btn-foods {
+    color: #FFFFFF;
+    background-color: #96DB77;
+    border-color: #A1E084;
+}
+
+.btn-foods:active,
+.btn-foods.active,
+.open .dropdown-toggle.btn-foods {
+    background-image: none;
+}
+
+.btn-foods.disabled,
+.btn-foods[disabled],
+fieldset[disabled] .btn-foods,
+.btn-foods.disabled:hover,
+.btn-foods[disabled]:hover,
+fieldset[disabled] .btn-foods:hover,
+.btn-foods.disabled:focus,
+.btn-foods[disabled]:focus,
+fieldset[disabled] .btn-foods:focus,
+.btn-foods.disabled:active,
+.btn-foods[disabled]:active,
+fieldset[disabled] .btn-foods:active,
+.btn-foods.disabled.active,
+.btn-foods[disabled].active,
+fieldset[disabled] .btn-foods.active {
+    background-color: #B3E69C;
+    border-color: #A1E084;
+}
+
+.btn-foods .badge {
+    color: #B3E69C;
+    background-color: #FFFFFF;
+}
+
+.communications {
+    background-color: #FFC4A2;
+}
+
+.btn-communications {
+    color: #FFFFFF;
+    background-color: #FFC4A2;
+    border-color: #EBAF8D;
+}
+
+.btn-communications:hover,
+.btn-communications:focus,
+.btn-communications:active,
+.btn-communications.active,
+.open .dropdown-toggle.btn-communications {
+    color: #FFFFFF;
+    background-color: #F79963;
+    border-color: #EBAF8D;
+}
+
+.btn-communications:active,
+.btn-communications.active,
+.open .dropdown-toggle.btn-communications {
+    background-image: none;
+}
+
+.btn-communications.disabled,
+.btn-communications[disabled],
+fieldset[disabled] .btn-communications,
+.btn-communications.disabled:hover,
+.btn-communications[disabled]:hover,
+fieldset[disabled] .btn-communications:hover,
+.btn-communications.disabled:focus,
+.btn-communications[disabled]:focus,
+fieldset[disabled] .btn-communications:focus,
+.btn-communications.disabled:active,
+.btn-communications[disabled]:active,
+fieldset[disabled] .btn-communications:active,
+.btn-communications.disabled.active,
+.btn-communications[disabled].active,
+fieldset[disabled] .btn-communications.active {
+    background-color: #FFC4A2;
+    border-color: #EBAF8D;
+}
+
+.btn-communications .badge {
+    color: #FFC4A2;
+    background-color: #FFFFFF;
+}
