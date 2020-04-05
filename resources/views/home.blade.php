@@ -26,8 +26,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $game->title }}</h5>
                                 <p class="card-text">{{ $game->content }}</p>
-                                <a href="{{ $game->link }}" target="_blank" class="btn btn-games">Go
-                                    somewhere</a>
+                                <a href="{{ $game->link }}" target="_blank" class="btn btn-games">Ausprobieren!</a>
                             </div>
                         </div>
                     </div>
@@ -53,8 +52,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $sport->title }}</h5>
                                 <p class="card-text">{{ $sport->content }}</p>
-                                <a href="{{ $sport->link }}" target="_blank" class="btn btn-sports">Go
-                                    somewhere</a>
+                                <a href="{{ $sport->link }}" target="_blank" class="btn btn-sports">Ausprobieren!</a>
                             </div>
                         </div>
                     </div>
@@ -81,8 +79,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $food->title }}</h5>
                                 <p class="card-text">{{ $food->content }}</p>
-                                <a href="{{ $food->link }}" target="_blank" class="btn btn-foods">Go
-                                    somewhere</a>
+                                <a href="{{ $food->link }}" target="_blank" class="btn btn-foods">Ausprobieren!</a>
                             </div>
                         </div>
                     </div>
@@ -108,8 +105,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $communication->title }}</h5>
                                 <p class="card-text">{{ $communication->content }}</p>
-                                <a href="{{ $communication->link }}" target="_blank" class="btn btn-communications">Go
-                                    somewhere</a>
+                                <a href="{{ $communication->link }}" target="_blank" class="btn btn-communications">Ausprobieren!</a>
                             </div>
                         </div>
                     </div>
