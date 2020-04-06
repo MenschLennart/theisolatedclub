@@ -3,27 +3,18 @@
 
 namespace App\Http\Controllers;
 use App\Activity;
-use App\User;
 use App\Category;
 use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
-    const CATEGORY_GAMES = 1;
-    const CATEGORY_SPORTS = 2;
-    const CATEGORY_FOODS = 3;
-    const CATEGORY_COMMUNICATIONS = 4;
 
     public function __construct()
     {
 
-    }
-
-    public function getUserActivities($id) {
-        $activities = User::find($id)->activities()->get();
-        return ($activities);
     }
 
     public function getActivityByCategory($category) {
@@ -32,21 +23,16 @@ class HomeController extends Controller
     }
 
     public function getActivities() {
-        $games = Activity::where('category_id', self::CATEGORY_GAMES)->get();
-        $sports = Activity::where('category_id', self::CATEGORY_SPORTS)->get();
-        $foods = Activity::where('category_id', self::CATEGORY_FOODS)->get();
-        $communications = Activity::where('category_id', self::CATEGORY_COMMUNICATIONS)->get();
-
+        $activities = Activity::all()
+            ->sortByDesc('created_at')
+            ->groupBy('category_id');
         $categories = Category::all();
         $types = Type::all();
 
         return view('home', [
-            'games' => $games,
-            'sports' => $sports,
-            'foods' => $foods,
-            'communications' => $communications,
+            'activities' => $activities,
             'categories' => $categories,
-            'types' => $types
+            'types' => $types->getDictionary(),
         ]);
     }
 
@@ -60,14 +46,20 @@ class HomeController extends Controller
             'link' => 'required|max:255',
         ]);
 
-        $activity = new Activity();
-        $activity->fill($validateData);
+        try {
+            $activity = new Activity();
+            $activity->fill($validateData);
 
-        // Check if anonymous or not
-        $userId = Auth::id();
-        $userId ? $activity->user_id = $userId : $activity->user_id = 1;
+            // Check if anonymous or not
+            Auth::id() ? $activity->user_id = Auth::id() : $activity->user_id = 1;
 
-        $activity->save();
+            $activity->save();
+
+        } catch (ValidationException $e) {
+            // something went wrong. No error handling for now.
+            // Need to catch Exception here for logging and show error message to user.
+        }
+
         return redirect('/')->with('status', 'Activity successfully created!');
     }
 }

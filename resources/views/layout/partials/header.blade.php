@@ -6,7 +6,7 @@
             worldwide state of emergency.</p>
         <p class="lead text-muted">And if you know a great thing you want to share with us, click the button below!</p>
         <p>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addActivityModal">Add an activity</a>
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addActivityModal">{{ __('Add Activity!') }}</a>
         </p>
 
         <!-- Modal -->
@@ -15,7 +15,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Add an activity</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{ __('Add Activity!') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -72,8 +72,8 @@
                             <div class="form-group row">
                                 <label for="inputLink" class="col-sm-2 col-form-label">Link</label>
                                 <div class="col-sm-10">
-                                    <input type="url" class="form-control" id="link" name="link"
-                                           placeholder="https://" required>
+                                    <input type="url" class="form-control" id="link" name="link" placeholder="https://" required>
+                                    <small id="urlHelp" class="form-text text-muted">Dont forget to put https:// or http:// at the beginning.</small>
                                 </div>
                             </div>
                         </div>

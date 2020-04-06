@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// HOME
 Route::get('/', 'HomeController@getActivities')->name('home');
 Route::post('/add', 'HomeController@addActivity');
-Route::get('/users/{id}/activities', 'HomeController@getUserActivities');
+
+// Profile
+Route::get('/user/{id}/activities', 'ProfileController@showActivities');
 
 Auth::routes(['register' => false]);
