@@ -2,7 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>TIC - The Isolated Club</title>
+
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+<title>{{ config('app.name', 'TIC - The Isolated Club') }}</title>
 
 <!-- Bootstrap core CSS -->
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

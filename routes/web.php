@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ActivityController@getActivities');
-Route::post('/add', 'ActivityController@addActivity');
-Route::get('/users/{id}/activities', 'ActivityController@getUserActivities');
+Route::get('/', 'HomeController@getActivities')->name('home');
+Route::post('/add', 'HomeController@addActivity');
+Route::get('/users/{id}/activities', 'HomeController@getUserActivities');
+
+Auth::routes(['register' => false]);

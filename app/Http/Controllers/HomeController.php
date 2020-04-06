@@ -7,8 +7,9 @@ use App\User;
 use App\Category;
 use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ActivityController extends Controller
+class HomeController extends Controller
 {
     const CATEGORY_GAMES = 1;
     const CATEGORY_SPORTS = 2;
@@ -62,8 +63,9 @@ class ActivityController extends Controller
         $activity = new Activity();
         $activity->fill($validateData);
 
-        // For now we don't have any user accounts
-        $activity->user_id = 1;
+        // Check if anonymous or not
+        $userId = Auth::id();
+        $userId ? $activity->user_id = $userId : $activity->user_id = 1;
 
         $activity->save();
         return redirect('/')->with('status', 'Activity successfully created!');
