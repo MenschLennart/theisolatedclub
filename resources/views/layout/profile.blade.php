@@ -7,9 +7,8 @@
     <body>
         <div id="app">
             @include('layout.partials.nav')
-            @include('layout.partials.header')
 
-            <main class="py-4">
+            <main>
                 @yield('content')
             </main>
 

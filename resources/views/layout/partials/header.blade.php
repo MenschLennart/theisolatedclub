@@ -46,10 +46,10 @@
                                         @isset($categories)
 
                                             @foreach($categories as $category)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="category_id" id="category{{ $category->id }}" value="{{ $category->id }}" required>
-                                                <label class="form-check-label" for="category{{ $category->id }}">{{ ucwords($category->name) }}</label>
-                                            </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="category_id" id="category{{ $category->id }}" value="{{ $category->id }}" required>
+                                                    <label class="form-check-label" for="category{{ $category->id }}">{{ ucwords($category->name) }}</label>
+                                                </div>
                                             @endforeach
 
                                         @endisset

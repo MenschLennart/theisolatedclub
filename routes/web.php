@@ -20,4 +20,4 @@ Route::post('/add', 'HomeController@addActivity');
 // Profile
 Route::get('/user/{id}/activities', 'ProfileController@showActivities');
 
-Auth::routes(['register' => false]);
+Auth::routes();

@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.home')
 
 @section('content')
 <div class="container">
@@ -12,11 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="username" class="col-md-2 col-form-label text-md-right">{{ __('Username') }}</label>
-                            <div class="col-md-3">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
-                                @error('username')
+                            <div class="col-md-6">
+                                <input id="username" type="email" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+
+                                @error('email')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,10 +26,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="firstname" class="col-md-2 col-form-label text-md-right">{{ __('First name') }}</label>
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
 
                             <!-- Firstname left -->
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
                                 <small id="firstnameHelp" class="form-text text-muted">(Optional)</small>
 
@@ -38,10 +39,13 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="form-group row">
 
                             <!-- Lastname right -->
-                            <label for="lastname" class="col-md-2 col-form-label text-md-right">{{ __('Last name') }}</label>
-                            <div class="col-md-3">
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
+                            <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
                                 <small id="lastnameHelp" class="form-text text-muted">(Optional)</small>
 

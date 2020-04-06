@@ -1,9 +1,9 @@
-@extends('layout.app')
+@extends('layout.profile')
 @section('content')
     <div class="container-fluid">
         @isset($activities)
             <div class="table-responsive">
-                <table class="table table-hover table-striped">
+                <table class="table table-hover table-striped font-weight-lighter">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
