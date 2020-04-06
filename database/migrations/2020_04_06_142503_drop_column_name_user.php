@@ -15,7 +15,7 @@ class DropColumnNameUser extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->removeColumn('name');
+            $table->dropColumn('name');
         });
     }
 
