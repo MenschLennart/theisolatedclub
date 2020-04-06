@@ -52,7 +52,7 @@
                                     <li class="list-inline-item"><a class="btn btn-primary btn-sm"
                                                                     href="{{ $activity->link }}" target="_blank"
                                                                     role="button">Link</a></li>
-                                    @if(Auth()->check())
+                                    @if(Auth()->user()->id === $activity->user_id)
                                         <li class="list-inline-item"><a class="btn btn-warning btn-sm"
                                                                         href="{{ route('activities.edit', $activity->id) }}"
                                                                         role="button">{{ __('Edit') }}</a></li>
