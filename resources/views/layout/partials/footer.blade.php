@@ -1,7 +1,7 @@
 <footer class="text-muted">
     <div class="container-fluid p-3 p-md-5">
         <ul class="footer-links">
-            <li><a href="https://github.com/MenschLennart/isolation_web">GitHub</a></li>
+            <li><a href="https://github.com/MenschLennart/theisolatedclub" target="_blank">GitHub</a></li>
             <li><a href="#" data-toggle="modal" data-target="#imprintModal">Imprint</a></li>
         </ul>
         <p>

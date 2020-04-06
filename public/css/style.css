@@ -17,6 +17,14 @@ h1.colorful {
     }
 }
 
+.activities .card-text {
+    font-size: .875rem;
+}
+
+.activities .card-footer {
+    font-size: .6rem;
+}
+
 footer {
     font-size: .8rem;
     text-align: left;
@@ -34,14 +42,6 @@ footer a {
 .footer-links li {
     display: inline-block;
     margin-right: 1rem;
-}
-
-.category-card .card-text {
-    font-size: .875rem;
-}
-
-.category-card .card-footer {
-    font-size: .6rem;
 }
 
 .category_row_1 {
