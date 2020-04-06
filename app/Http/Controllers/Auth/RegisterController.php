@@ -66,12 +66,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = new User();
-        $user->fill($data);
-
-        // Override password, need to make hash
-        $user->password = Hash::make($data['password']);
-
-        return $user;
+        return User::create([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'firstname' => $data['firstname'] ? $data['firstname'] : NULL,
+                'lastname' => $data['lastname'] ? $data['firstname'] : NULL,
+                'password' => Hash::make($data['password']),
+        ]);
     }
 }

@@ -1,5 +1,14 @@
-@extends('layout.home')
-
+@extends('layout.simple')
+@section('breadcrumbs')
+    <section>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Login</li>
+            </ol>
+        </nav>
+    </section>
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

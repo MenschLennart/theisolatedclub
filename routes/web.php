@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 // HOME
-Route::get('/', 'HomeController@getActivities')->name('home');
-Route::post('/add', 'HomeController@addActivity');
+Route::get('/', 'ActivityController@index')->name('home');
+
+// Activity
+Route::resource('activities', 'ActivityController');
 
 // Profile
-Route::get('/user/{id}/activities', 'ProfileController@showActivities');
+Route::get('/user/{id}/activities', 'UserController@showUserActivities')->name('userActivities');
+Route::get('/profile/activities', 'ProfileController@indexActivities')->name('myActivities');
 
 Auth::routes();

@@ -1,10 +1,29 @@
-@extends('layout.home')
+@extends('layout.lead')
+@section('breadcrumbs')
+    <section>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+        </nav>
+    </section>
+@endsection
 @section('content')
     <div class="container-fluid">
 
         @if(session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         @endif
 
@@ -35,7 +54,7 @@
                                            class="btn btn-category_{{ $category->id }}">{{ __('Try it!') }}</a>
                                     </div>
                                     <div class="card-footer text-muted text-right">
-                                        {{ __('Posted by:') }} <a href="/user/{{ $activity->user->id }}/activities">{{ $activity->user->username }}</a>
+                                        {{ __('Posted by:') }} <a href="{{ route('userActivities', $activity->user->id) }}">{{ $activity->user->username }}</a>
                                     </div>
                                 </div>
                             </div>

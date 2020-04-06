@@ -1,5 +1,14 @@
-@extends('layout.home')
-
+@extends('layout.simple')
+@section('breadcrumbs')
+    <section>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Register</li>
+            </ol>
+        </nav>
+    </section>
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -15,7 +24,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">
@@ -30,7 +39,7 @@
 
                             <!-- Firstname left -->
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname">
                                 <small id="firstnameHelp" class="form-text text-muted">(Optional)</small>
 
                                 @error('firstname')
@@ -46,7 +55,7 @@
                             <!-- Lastname right -->
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
                                 <small id="lastnameHelp" class="form-text text-muted">(Optional)</small>
 
                                 @error('lastname')

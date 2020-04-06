@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/add" method="post">
+                    <form action="/activities" method="post">
                         @csrf
                         <div class="modal-body text-left">
 

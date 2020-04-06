@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function __construct() {
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
-    public function showActivities($id) {
-        if($user = User::find($id)) {
+    public function indexActivities() {
+        if($activities = Auth()->user()->activities()->paginate(10)) {
             return view('profile', [
-                'activities' => $user->activities()->paginate(10)
+                'activities' => $activities
             ]);
         }
 

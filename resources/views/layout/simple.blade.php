@@ -7,8 +7,7 @@
     <body>
         <div id="app">
             @include('layout.partials.nav')
-            @include('layout.partials.header')
-
+            @yield('breadcrumbs')
             <main>
                 @yield('content')
             </main>

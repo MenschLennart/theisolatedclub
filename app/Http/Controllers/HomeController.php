@@ -60,6 +60,6 @@ class HomeController extends Controller
             // Need to catch Exception here for logging and show error message to user.
         }
 
-        return redirect('/')->with('status', 'Activity successfully created!');
+        return redirect()->route('home')->with('status', 'Activity successfully created!');
     }
 }
