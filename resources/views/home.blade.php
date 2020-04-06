@@ -36,7 +36,7 @@
                                                class="btn btn-category_{{ $category->id }}">{{ __('Try it!') }}</a>
                                         </div>
                                         <div class="card-footer text-muted text-right">
-                                            {{ __('Posted by:') }} <a href="/user/{{ $activity->user->id }}/activities">{{ $activity->user->name }}</a>
+                                            {{ __('Posted by:') }} <a href="/user/{{ $activity->user->id }}/activities">{{ $activity->user->username }}</a>
                                         </div>
                                     </div>
                                 </div>
