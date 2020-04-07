@@ -8,18 +8,26 @@ class TypeTableSeeder extends Seeder
     public function run() {
         DB::table('types')->insert([
             [
-                'id' => 1,
                 'title' => 'Video',
             ], [
-                'id' => 2,
                 'title' => 'App',
             ], [
-                'id' => 3,
                 'title' => 'Audio',
             ], [
-                'id' => 4,
                 'title' => 'Article',
-            ]
+            ], [
+                'title' => 'Website',
+            ], [
+                'title' => 'TV',
+            ], [
+                'title' => 'Netflix',
+            ], [
+                'title' => 'Disney+',
+            ], [
+                'title' => 'AppleTV+',
+            ], [
+                'title' => 'Amazon Prime',
+            ],
         ]);
     }
 }

@@ -4,17 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class SubType extends Model
 {
     protected $fillable = [
         'name'
     ];
 
     public function activities() {
-        $this->hasMany('App\Activity');
-    }
-
-    public function categories() {
-        $this->belongsToMany('App\Category');
+        $this->belongsTo('App\Type');
     }
 }

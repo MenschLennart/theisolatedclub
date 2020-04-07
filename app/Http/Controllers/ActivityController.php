@@ -29,7 +29,7 @@ class ActivityController extends Controller
 
         return view('home', [
             'activities' => $activities,
-            'categories' => $categories,
+            'categories' => $categories->getDictionary(),
             'types' => $types->getDictionary(),
         ]);
     }
@@ -72,7 +72,7 @@ class ActivityController extends Controller
 
         } catch (\Throwable $e) {
             report($e);
-            return redirect()->route('home')->with('status', 'Something went wrong! Reported.');
+            return redirect()->route('home')->withErrors(['error' => 'Something went wrong. Reported.']);
         }
 
         return redirect()->route('home')->with('status', 'Activity successful added!');
@@ -106,12 +106,12 @@ class ActivityController extends Controller
 
             return view('activities.edit', [
                 'activity' => $activity,
-                'categories' => $categories,
+                'categories' => $categories->getDictionary(),
                 'types' => $types->getDictionary(),
             ]);
         }
 
-        return redirect()->route('myActivities')->withErrors(['error1' => 'You\'re not allowed!']);
+        return redirect()->route('myActivities')->withErrors(['error' => 'You\'re not allowed!']);
     }
 
     /**

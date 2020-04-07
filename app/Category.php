@@ -13,4 +13,8 @@ class Category extends Model {
     public function activities() {
         $this->hasMany('App\Activity');
     }
+
+    public function types() {
+        $this->belongsToMany('App\Types');
+    }
 }

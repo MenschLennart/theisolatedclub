@@ -252,3 +252,103 @@ fieldset[disabled] .btn-category_4.active {
     color: #FFC4A2;
     background-color: #FFFFFF;
 }
+
+.category_row_5 {
+    background-color: #B49FFF;
+}
+
+.btn-category_5 {
+    color: #ffffff;
+    background-color: #B49FFF;
+    border-color: #967FE8;
+}
+
+.btn-category_5:hover,
+.btn-category_5:focus,
+.btn-category_5:active,
+.btn-category_5.active,
+.open .dropdown-toggle.btn-category_5 {
+    color: #ffffff;
+    background-color: #947AF0;
+    border-color: #967FE8;
+}
+
+.btn-category_5:active,
+.btn-category_5.active,
+.open .dropdown-toggle.btn-category_5 {
+    background-image: none;
+}
+
+.btn-category_5.disabled,
+.btn-category_5[disabled],
+fieldset[disabled] .btn-category_5,
+.btn-category_5.disabled:hover,
+.btn-category_5[disabled]:hover,
+fieldset[disabled] .btn-category_5:hover,
+.btn-category_5.disabled:focus,
+.btn-category_5[disabled]:focus,
+fieldset[disabled] .btn-category_5:focus,
+.btn-category_5.disabled:active,
+.btn-category_5[disabled]:active,
+fieldset[disabled] .btn-category_5:active,
+.btn-category_5.disabled.active,
+.btn-category_5[disabled].active,
+fieldset[disabled] .btn-category_5.active {
+    background-color: #B49FFF;
+    border-color: #967FE8;
+}
+
+.btn-category_5 .badge {
+    color: #B49FFF;
+    background-color: #ffffff;
+}
+
+.category_row_6 {
+    background-color: #E1E87B;
+}
+
+.btn-category_6 {
+    color: #FFFFFF;
+    background-color: #E1E87B;
+    border-color: #C2CC39;
+}
+
+.btn-category_6:hover,
+.btn-category_6:focus,
+.btn-category_6:active,
+.btn-category_6.active,
+.open .dropdown-toggle.btn-category_6 {
+    color: #FFFFFF;
+    background-color: #D6E043;
+    border-color: #C2CC39;
+}
+
+.btn-category_6:active,
+.btn-category_6.active,
+.open .dropdown-toggle.btn-category_6 {
+    background-image: none;
+}
+
+.btn-category_6.disabled,
+.btn-category_6[disabled],
+fieldset[disabled] .btn-category_6,
+.btn-category_6.disabled:hover,
+.btn-category_6[disabled]:hover,
+fieldset[disabled] .btn-category_6:hover,
+.btn-category_6.disabled:focus,
+.btn-category_6[disabled]:focus,
+fieldset[disabled] .btn-category_6:focus,
+.btn-category_6.disabled:active,
+.btn-category_6[disabled]:active,
+fieldset[disabled] .btn-category_6:active,
+.btn-category_6.disabled.active,
+.btn-category_6[disabled].active,
+fieldset[disabled] .btn-category_6.active {
+    background-color: #E1E87B;
+    border-color: #C2CC39;
+}
+
+.btn-category_6 .badge {
+    color: #E1E87B;
+    background-color: #FFFFFF;
+}

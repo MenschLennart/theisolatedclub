@@ -52,10 +52,12 @@
                                     <li class="list-inline-item"><a class="btn btn-primary btn-sm"
                                                                     href="{{ $activity->link }}" target="_blank"
                                                                     role="button">Link</a></li>
-                                    @if(Auth()->user()->id === $activity->user_id)
+                                    @if(Gate::allows('update-activity', $activity))
                                         <li class="list-inline-item"><a class="btn btn-warning btn-sm"
                                                                         href="{{ route('activities.edit', $activity->id) }}"
                                                                         role="button">{{ __('Edit') }}</a></li>
+                                    @endif
+                                    @if(Gate::allows('delete-activity', $activity))
                                         <form action="/activities/{{ $activity->id }}" method="POST">
                                             @csrf
                                             @method('DELETE')

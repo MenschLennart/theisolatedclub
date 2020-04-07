@@ -32,7 +32,7 @@ class HomeController extends Controller
         return view('home', [
             'activities' => $activities,
             'categories' => $categories,
-            'types' => $types->getDictionary(),
+            'types' => $types,
         ]);
     }
 

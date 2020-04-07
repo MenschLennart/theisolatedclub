@@ -17,8 +17,14 @@ class CategoryTableSeeder extends Seeder
                 'name' => 'Food & Recipes',
                 'description' => 'Tolle Rezepteideen und aktuelle Trends.'
             ], [
-                'name' => 'Communications',
+                'name' => 'Talk & Social',
                 'description' => 'Digitale Kommunikation so wichtig wie nie.'
+            ], [
+                'name' => 'TV & Shows',
+                'description' => 'It\'s time to binge watch!'
+            ], [
+                'name' => 'Classroom',
+                'description' => 'Keep your Brain up-to-date.'
             ]
         ]);
     }

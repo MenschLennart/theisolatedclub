@@ -8,7 +8,7 @@ class UsersTableSeeder extends Seeder
     public function run() {
         DB::table('users')->insert(
             [
-                'name' => 'Seyi',
+                'username' => 'Seyi',
                 'email' => 'seyii@seyi.com',
                 'password' => 'somerandompassword'
             ]
@@ -246,6 +246,62 @@ class UsersTableSeeder extends Seeder
                 'link' => 'http://www.test.de',
                 'category_id' => 4,
                 'type_id' => 4,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 6,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 7,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 8,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 9,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 10,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 7,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 8,
+                'user_id' => 1
+            ], [
+                'title' => 'Communication Activity',
+                'content' => 'lorem ipsum dolor sit ammet',
+                'link' => 'http://www.test.de',
+                'category_id' => 5,
+                'type_id' => 6,
                 'user_id' => 1
             ]
         ]);
