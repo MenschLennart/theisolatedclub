@@ -29,13 +29,14 @@
 
         @isset($categories)
             @foreach($categories as $category)
-                <div class="category_row_{{ $category->id }} row align-items-center p-2 p-md-4 mb-md-4">
-                    <div class="col-sm-12 col-md-4 col-xl-3 p-4 text-center">
-                        <img src="{{ asset('img/category_' . $category->id) }}.png"
-                             width="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}"
-                             height="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}" alt="">
-                        <h2>{{ $category->name }}</h2>
-                        <p>{{ $category->description }}</p>
+                <div class="category_row_{{ $category->id }} row h-auto justify-content-center align-items-center p-2 p-md-4 mb-md-4">
+                    <div class="col-sm-12 col-md-4 col-xl-2 p-4 text-center">
+                            <img src="{{ asset('img/category_' . $category->id) }}.png"
+                                 width="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}"
+                                 height="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}" alt="">
+                            <h2>{{ $category->name }}</h2>
+                            <p>{{ $category->description }}</p>
+                        <a href="#" class="btn btn-category_{{ $category->id }}" data-toggle="modal" data-target="#addActivityModal">{{ __('Contribute!') }}</a>
                     </div>
                     @isset($activities)
                         @foreach($activities[$category->id] as $activity)

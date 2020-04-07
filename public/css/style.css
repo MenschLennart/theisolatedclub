@@ -17,6 +17,15 @@ h1.colorful {
     }
 }
 
+.activities {
+    min-width: 14em;
+    max-width: 20em;
+}
+
+.activities .card-header {
+    font-size: 1rem;
+}
+
 .activities .card-text {
     font-size: .875rem;
 }
