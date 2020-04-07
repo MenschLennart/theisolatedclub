@@ -30,14 +30,14 @@
         @isset($categories)
             @foreach($categories as $category)
                 <div
-                    class="category_row_{{ $category->id }} row h-auto justify-content-center align-items-center p-2 p-md-4 mb-md-4">
+                    class="category-{{ $category->id }} row h-auto justify-content-center align-items-center p-2 p-md-4 mb-md-4">
                     <div class="col-sm-12 col-md-4 col-xl-2 p-4 text-center">
                         <img src="{{ asset('img/category_' . $category->id) }}.png"
                              width="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}"
                              height="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}" alt="">
                         <h2>{{ $category->name }}</h2>
                         <p>{{ $category->description }}</p>
-                        <a href="#" class="btn btn-category_{{ $category->id }}" data-toggle="modal"
+                        <a href="#" class="btn btn-category-{{ $category->id }}" data-toggle="modal"
                            data-target="#category_{{ $category->id }}_modal">{{ __('Contribute!') }}</a>
                     </div>
                     @isset($activities)
@@ -55,7 +55,7 @@
                                             <h5 class="card-title">{{ $activity->title }}</h5>
                                             <p class="card-text">{{ $activity->content }}</p>
                                             <a href="{{ $activity->link }}" target="_blank"
-                                               class="btn btn-category_{{ $category->id }}">{{ __('Try it!') }}</a>
+                                               class="btn btn-category-{{ $category->id }}">{{ __('Try it!') }}</a>
                                         </div>
                                         <div class="card-footer text-muted text-right">
                                             {{ __('Posted by:') }} <a
@@ -67,7 +67,7 @@
                             @endforeach
                                 @if(env('TIC_CARDS_MAX', 5) > 0 && $activities[$category->id]->count() >= env('TIC_CARDS_MAX', 5))
                                     <div class="read-more col-sm-12 text-center">
-                                        <a href="categories/{{ $category->id }}" class="btn btn-category_{{ $category->id }}">{{ __('Discover more') }}</a>
+                                        <a href="categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover more') }}</a>
                                     </div>
                                 @endif
                         @endisset
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Abort</button>
-                                    <button type="submit" class="btn btn-category_{{ $category->id }}">
+                                    <button type="submit" class="btn btn-category-{{ $category->id }}">
                                         Add {{ $category->name }}</button>
                                 </div>
                             </form>

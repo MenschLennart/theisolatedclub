@@ -20,6 +20,9 @@ Route::get('/', 'ActivityController@index')->name('home');
 // Activity
 Route::resource('activities', 'ActivityController');
 
+// Category
+Route::resource('categories', 'CategoryController');
+
 // Profile
 Route::get('/user/{id}/activities', 'UserController@showUserActivities')->name('userActivities');
 Route::get('/profile/activities', 'ProfileController@indexActivities')->name('myActivities');
