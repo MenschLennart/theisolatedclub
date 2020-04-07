@@ -65,10 +65,14 @@
                                 </div>
                                 @break($loop->iteration == env('TIC_CARDS_MAX', 5))
                             @endforeach
+                                @if(env('TIC_CARDS_MAX', 5) > 0 && $activities[$category->id]->count() >= env('TIC_CARDS_MAX', 5))
+                                    <div class="read-more col-sm-12 text-center">
+                                        <a href="categories/{{ $category->id }}" class="btn btn-category_{{ $category->id }}">{{ __('Discover more') }}</a>
+                                    </div>
+                                @endif
                         @endisset
                     @endisset
                 </div>
-
                 <div class="modal fade" id="category_{{ $category->id }}_modal" tabindex="-1" role="dialog"
                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -103,7 +107,8 @@
                                         <div class="col-sm-10">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="category_id"
-                                                       id="category{{ $category->id }}" value="{{ $category->id }}" checked required>
+                                                       id="category{{ $category->id }}" value="{{ $category->id }}"
+                                                       checked required>
                                                 <label class="form-check-label"
                                                        for="category{{ $category->id }}">{{ ucwords($category->name) }}</label>
                                             </div>
@@ -134,7 +139,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Abort</button>
-                                    <button type="submit" class="btn btn-category_{{ $category->id }}">Add {{ $category->name }}</button>
+                                    <button type="submit" class="btn btn-category_{{ $category->id }}">
+                                        Add {{ $category->name }}</button>
                                 </div>
                             </form>
                         </div>
