@@ -39,6 +39,7 @@
                         <p>{{ $category->description }}</p>
                         <a href="#" class="btn btn-category-{{ $category->id }}" data-toggle="modal"
                            data-target="#category_{{ $category->id }}_modal">{{ __('Contribute!') }}</a>
+                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover ') }} <span class="badge badge-pill badge-light">{{ ($category->activities->count() - env('TIC_CARDS_MAX')) }}</span></a>
                     </div>
                     @isset($activities)
                         @isset($activities[$category->id])
@@ -67,7 +68,7 @@
                             @endforeach
                                 @if(env('TIC_CARDS_MAX', 5) > 0 && $activities[$category->id]->count() > env('TIC_CARDS_MAX', 5))
                                     <div class="read-more col-sm-12 p-3 text-center">
-                                        <a href="categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">
+                                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-category-{{ $category->id }}">
                                             {{ __('Discover') }} <span class="badge badge-pill badge-light">{{ ($activities[$category->id]->count() - env('TIC_CARDS_MAX')) }}</span> {{ __('more') }}
                                         </a>
                                     </div>
