@@ -19,7 +19,7 @@
                          height="{{ env('TIC_CARDS_CAT_IMG_SIZE', 100) }}" alt="">
                     <h2>{{ $category->name }}</h2>
                     <p>{{ $category->description }}</p>
-                    <a href="/categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover') }}</a>
+                    <a href="/categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover') }} <span class="badge badge-pill badge-light">{{ ($category->activities->count()) }}</span></a>
                     <a href="#" class="btn btn-category-{{ $category->id }}" data-toggle="modal"
                        data-target="#category_{{ $category->id }}_modal">{{ __('Contribute') }}</a>
                 </div>

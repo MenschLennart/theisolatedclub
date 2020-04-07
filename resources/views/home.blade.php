@@ -43,6 +43,7 @@
                     @isset($activities)
                         @isset($activities[$category->id])
                             @foreach($activities[$category->id] as $activity)
+                                @break($loop->iteration == env('TIC_CARDS_MAX', 5))
                                 <div class="activities col-sm-12 col-md-4 col-xl-3 p-3">
                                     <div class="card bg-light">
                                         <div class="card-header text-muted">
@@ -63,11 +64,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                @break($loop->iteration == env('TIC_CARDS_MAX', 5))
                             @endforeach
-                                @if(env('TIC_CARDS_MAX', 5) > 0 && $activities[$category->id]->count() >= env('TIC_CARDS_MAX', 5))
-                                    <div class="read-more col-sm-12 text-center">
-                                        <a href="categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover more') }}</a>
+                                @if(env('TIC_CARDS_MAX', 5) > 0 && $activities[$category->id]->count() > env('TIC_CARDS_MAX', 5))
+                                    <div class="read-more col-sm-12 p-3 text-center">
+                                        <a href="categories/{{ $category->id }}" class="btn btn-category-{{ $category->id }}">
+                                            {{ __('Discover') }} <span class="badge badge-pill badge-light">{{ ($activities[$category->id]->count() - env('TIC_CARDS_MAX')) }}</span> {{ __('more') }}
+                                        </a>
                                     </div>
                                 @endif
                         @endisset
