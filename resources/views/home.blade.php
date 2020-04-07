@@ -39,7 +39,7 @@
                         <p>{{ $category->description }}</p>
                         <a href="#" class="btn btn-category-{{ $category->id }}" data-toggle="modal"
                            data-target="#category_{{ $category->id }}_modal">{{ __('Contribute!') }}</a>
-                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover ') }} <span class="badge badge-pill badge-light">{{ ($category->activities->count() - env('TIC_CARDS_MAX')) }}</span></a>
+                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-category-{{ $category->id }}">{{ __('Discover ') }} <span class="badge badge-pill badge-light">{{ ($category->activities->count()) }}</span></a>
                     </div>
                     @isset($activities)
                         @isset($activities[$category->id])
