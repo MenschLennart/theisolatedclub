@@ -25,12 +25,10 @@ class ActivityController extends Controller
             ->sortByDesc('created_at')
             ->groupBy('category_id');
         $categories = Category::all();
-        $types = Type::all();
 
         return view('home', [
             'activities' => $activities,
-            'categories' => $categories->getDictionary(),
-            'types' => $types->getDictionary(),
+            'categories' => $categories->getDictionary()
         ]);
     }
 
@@ -66,8 +64,13 @@ class ActivityController extends Controller
             $activity->fill($validateData);
 
             // Check if anonymous or not
-            Auth::id() ? $activity->user_id = Auth::id() : $activity->user_id = 1;
+            if(Auth::check()) {
+                $user_id = Auth::id();
+            } else {
+                $user_id = 1;
+            }
 
+            $activity->user_id = $user_id;
             $activity->save();
 
         } catch (\Throwable $e) {

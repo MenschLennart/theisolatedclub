@@ -13,10 +13,24 @@ class AddSubTypes extends Migration
      */
     public function up()
     {
-        Schema::create('categories_types', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('category_id')->unsigned();
-            $table->integer('type_id')->unsigned();
+        Schema::create('category_type', function (Blueprint $table) {
+            $table->integer('category_id')
+                ->unsigned()
+                ->index();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
+
+            $table->integer('type_id')
+                ->unsigned()
+                ->index();
+            $table->foreign('type_id')
+                ->references('id')
+                ->on('types')
+                ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -27,6 +41,6 @@ class AddSubTypes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories_types');
+        Schema::dropIfExists('category_type');
     }
 }

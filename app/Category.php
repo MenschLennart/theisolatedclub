@@ -11,10 +11,10 @@ class Category extends Model {
     ];
 
     public function activities() {
-        $this->hasMany('App\Activity');
+        return $this->hasMany('App\Activity');
     }
 
     public function types() {
-        $this->belongsToMany('App\Types');
+        return $this->belongsToMany(Type::class);
     }
 }

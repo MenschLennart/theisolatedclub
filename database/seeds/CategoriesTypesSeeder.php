@@ -11,7 +11,7 @@ class CategoriesTypesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories_types')->insert([
+        DB::table('category_type')->insert([
             [
                 'category_id' => 1,
                 'type_id' => 1
