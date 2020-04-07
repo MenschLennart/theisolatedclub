@@ -45,7 +45,7 @@
                         @isset($activities[$category->id])
                             @foreach($activities[$category->id] as $activity)
                                 <div class="activities col-sm-12 col-md-4 col-xl-3 p-3">
-                                    <div class="card bg-light">
+                                    <div class="card bg-light shadow">
                                         <div class="card-header text-muted">
                                             <img class="mr-1" src="/img/type_{{ $activity->type_id }}.png"
                                                  width="{{ env('TIC_CARDS_TYP_IMG_SIZE', 40) }}"
