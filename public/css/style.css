@@ -352,3 +352,53 @@ fieldset[disabled] .btn-category_6.active {
     color: #E1E87B;
     background-color: #FFFFFF;
 }
+
+.category_row_7 {
+    background-color: #84EBE4;
+}
+
+.btn-category_7 {
+    color: #ffffff;
+    background-color: #84EBE4;
+    border-color: #60CCC5;
+}
+
+.btn-category_7:hover,
+.btn-category_7:focus,
+.btn-category_7:active,
+.btn-category_7.active,
+.open .dropdown-toggle.btn-category_7 {
+    color: #ffffff;
+    background-color: #60CCC5;
+    border-color: #60CCC5;
+}
+
+.btn-category_7:active,
+.btn-category_7.active,
+.open .dropdown-toggle.btn-category_7 {
+    background-image: none;
+}
+
+.btn-category_7.disabled,
+.btn-category_7[disabled],
+fieldset[disabled] .btn-category_7,
+.btn-category_7.disabled:hover,
+.btn-category_7[disabled]:hover,
+fieldset[disabled] .btn-category_7:hover,
+.btn-category_7.disabled:focus,
+.btn-category_7[disabled]:focus,
+fieldset[disabled] .btn-category_7:focus,
+.btn-category_7.disabled:active,
+.btn-category_7[disabled]:active,
+fieldset[disabled] .btn-category_7:active,
+.btn-category_7.disabled.active,
+.btn-category_7[disabled].active,
+fieldset[disabled] .btn-category_7.active {
+    background-color: #84EBE4;
+    border-color: #60CCC5;
+}
+
+.btn-category_7 .badge {
+    color: #84EBE4;
+    background-color: #ffffff;
+}
