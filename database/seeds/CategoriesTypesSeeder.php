@@ -102,6 +102,36 @@ class CategoriesTypesSeeder extends Seeder
             ], [
                 'category_id' => 5,
                 'type_id' => 5
+            ], [
+                'category_id' => 6,
+                'type_id' => 1
+            ], [
+                'category_id' => 6,
+                'type_id' => 2
+            ], [
+                'category_id' => 6,
+                'type_id' => 3
+            ], [
+                'category_id' => 6,
+                'type_id' => 4
+            ], [
+                'category_id' => 6,
+                'type_id' => 5
+            ], [
+                'category_id' => 7,
+                'type_id' => 1
+            ], [
+                'category_id' => 7,
+                'type_id' => 2
+            ], [
+                'category_id' => 7,
+                'type_id' => 3
+            ], [
+                'category_id' => 7,
+                'type_id' => 4
+            ], [
+                'category_id' => 7,
+                'type_id' => 5
             ]
         ]);
     }

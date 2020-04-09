@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\Category;
+use App\Comment;
 use App\Type;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -78,18 +79,31 @@ class ActivityController extends Controller
             return redirect()->route('home')->withErrors(['error' => 'Something went wrong. Reported.']);
         }
 
-        return redirect()->route('home')->with('status', 'Activity successful added!');
+        return redirect()->route('home')->with('status', 'Activity successfully added!');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse | View
      */
     public function show($id)
     {
-        //
+        try {
+            $activity = Activity::find($id);
+            $comments = Comment::where('activity_id', $id)
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);
+        } catch (\Throwable $e) {
+            report($e);
+            return redirect()->route('home')->withErrors(['error' => 'Activity does not exist!']);
+        }
+
+        return view('activities.show', [
+            'activity' => $activity,
+            'comments' => $comments,
+        ]);
     }
 
     /**

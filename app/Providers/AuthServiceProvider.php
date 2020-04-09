@@ -49,5 +49,9 @@ class AuthServiceProvider extends ServiceProvider
                 ? Response::allow()
                 : Response::deny(__('You\'re not allowed to delete this activity!'));
         });
+
+        Gate::define('create-comment', function($user) {
+            return Auth()->check();
+        });
     }
 }

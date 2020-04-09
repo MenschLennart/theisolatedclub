@@ -25,6 +25,9 @@ class CategoryTableSeeder extends Seeder
             ], [
                 'name' => 'Classroom',
                 'description' => 'Keep your Brain up-to-date.'
+            ], [
+                'name' => 'Useful',
+                'description' => 'Useful but not.'
             ]
         ]);
     }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     protected $fillable = [
-        'title', 'content', 'link', 'category_id', 'user_id', 'type_id'
+        'title', 'content', 'link', 'category_id', 'type_id', 'user_id',
     ];
 
     public function type() {
@@ -21,5 +21,9 @@ class Activity extends Model
 
     public function user() {
         return $this->belongsTo('App\User');
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
 }

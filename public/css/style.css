@@ -34,12 +34,24 @@ h1.colorful {
     font-size: 1rem;
 }
 
+.comments .user-area .card-text {
+    font-size: .675rem;
+}
+
+.comments .card-text,
 .activities .card-text {
     font-size: .875rem;
 }
 
+.comments .card-footer,
 .activities .card-footer {
     font-size: .6rem;
+}
+
+.comments .comment-text {
+    background-color: #F7F7F7;
+    border: 1px solid #E2DCE1;
+    border-radius: 4px;
 }
 
 footer {
@@ -61,8 +73,21 @@ footer a {
     margin-right: 1rem;
 }
 
+section.category-1,
 .category-1 {
     background-color: #A5CBFF;
+}
+
+.text-category-1 {
+    color: #A5CBFF;
+}
+
+.text-category-1:hover,
+.text-category-1:focus,
+.text-category-1:active,
+.text-category-1.active,
+.open .dropdown-toggle.text-category-1 {
+    color: #7DADF0;
 }
 
 .btn-category-1 {
@@ -115,6 +140,18 @@ fieldset[disabled] .btn-category-1.active {
     background-color: #FFB9FD;
 }
 
+.text-category-2 {
+    color: #FFB9FD;
+}
+
+.text-category-2:hover,
+.text-category-2:focus,
+.text-category-2:active,
+.text-category-2.active,
+.open .dropdown-toggle.text-category-2 {
+    color: #F0ADEE;
+}
+
 .btn-category-2 {
     color: #FFFFFF;
     background-color: #FFB9FD;
@@ -163,6 +200,18 @@ fieldset[disabled] .btn-category-2.active {
 
 .category-3 {
     background-color: #B3E69C;
+}
+
+.text-category-3 {
+    color: #B3E69C;
+}
+
+.text-category-3:hover,
+.text-category-3:focus,
+.text-category-3:active,
+.text-category-3.active,
+.open .dropdown-toggle.text-category-3 {
+    color: #A1E084;
 }
 
 .btn-category-3 {
@@ -215,6 +264,18 @@ fieldset[disabled] .btn-category-3.active {
     background-color: #FFC4A2;
 }
 
+.text-category-4 {
+    color: #FFC4A2;
+}
+
+.text-category-4:hover,
+.text-category-4:focus,
+.text-category-4:active,
+.text-category-4.active,
+.open .dropdown-toggle.text-category-4 {
+    color: #F79963;
+}
+
 .btn-category-4 {
     color: #FFFFFF;
     background-color: #FFC4A2;
@@ -263,6 +324,18 @@ fieldset[disabled] .btn-category-4.active {
 
 .category-5 {
     background-color: #B49FFF;
+}
+
+.text-category-5 {
+    color: #B49FFF;
+}
+
+.text-category-5:hover,
+.text-category-5:focus,
+.text-category-5:active,
+.text-category-5.active,
+.open .dropdown-toggle.text-category-5 {
+    color: #947AF0;
 }
 
 .btn-category-5 {
@@ -315,6 +388,18 @@ fieldset[disabled] .btn-category-5.active {
     background-color: #E1E87B;
 }
 
+.text-category-6 {
+    color: #E1E87B;
+}
+
+.text-category-6:hover,
+.text-category-6:focus,
+.text-category-6:active,
+.text-category-6.active,
+.open .dropdown-toggle.text-category-6 {
+    color: #D6E043;
+}
+
 .btn-category-6 {
     color: #FFFFFF;
     background-color: #E1E87B;
@@ -363,6 +448,18 @@ fieldset[disabled] .btn-category-6.active {
 
 .category-7 {
     background-color: #84EBE4;
+}
+
+.text-category-7 {
+    color: #84EBE4;
+}
+
+.text-category-7:hover,
+.text-category-7:focus,
+.text-category-7:active,
+.text-category-7.active,
+.open .dropdown-toggle.text-category-5 {
+    color: #60CCC5;
 }
 
 .btn-category-7 {

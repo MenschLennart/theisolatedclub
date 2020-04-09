@@ -35,9 +35,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'date:Y-m-d'
     ];
 
     public function activities() {
         return $this->hasMany('App\Activity');
+    }
+
+    public function comments() {
+        return $this->hasMany(\App\Comment::class);
     }
 }

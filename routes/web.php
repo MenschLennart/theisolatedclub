@@ -23,6 +23,9 @@ Route::resource('activities', 'ActivityController');
 // Category
 Route::resource('categories', 'CategoryController');
 
+// Comment
+Route::resource('comments', 'CommentController');
+
 // Profile
 Route::get('/user/{id}/activities', 'UserController@showUserActivities')->name('userActivities');
 Route::get('/profile/activities', 'ProfileController@indexActivities')->name('myActivities');
