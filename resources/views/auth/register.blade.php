@@ -39,7 +39,7 @@
 
                             <!-- Firstname left -->
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname">
+                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" autocomplete="firstname">
                                 <small id="firstnameHelp" class="form-text text-muted">(Optional)</small>
 
                                 @error('firstname')
@@ -55,7 +55,7 @@
                             <!-- Lastname right -->
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
+                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" autocomplete="lastname">
                                 <small id="lastnameHelp" class="form-text text-muted">(Optional)</small>
 
                                 @error('lastname')
