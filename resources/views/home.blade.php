@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="card-footer text-muted text-right">
                                             <div class="float-left">
-                                                {{ $activity->comments->count() }} {{ __('Comments') }}
+                                                <a href="{{ route('activities.show', $activity->id) }}">{{ $activity->comments->count() }} {{ __('Comments') }}</a>
                                             </div>
                                             <div class="float-right">
                                                 {{ __('Posted by:') }} <a

@@ -78,6 +78,10 @@ section.category-1,
     background-color: #A5CBFF;
 }
 
+.category-1 .activities .card-footer a {
+    color: #7DADF0;
+}
+
 .text-category-1 {
     color: #A5CBFF;
 }
@@ -144,6 +148,10 @@ fieldset[disabled] .btn-category-1.active {
     color: #FFB9FD;
 }
 
+.category-2 .activities .card-footer a {
+    color: #E890E5;
+}
+
 .text-category-2:hover,
 .text-category-2:focus,
 .text-category-2:active,
@@ -204,6 +212,10 @@ fieldset[disabled] .btn-category-2.active {
 
 .text-category-3 {
     color: #B3E69C;
+}
+
+.category-3 .activities .card-footer a {
+    color: #96DB77;
 }
 
 .text-category-3:hover,
@@ -268,6 +280,10 @@ fieldset[disabled] .btn-category-3.active {
     color: #FFC4A2;
 }
 
+.category-4 .activities .card-footer a {
+    color: #F79963;
+}
+
 .text-category-4:hover,
 .text-category-4:focus,
 .text-category-4:active,
@@ -328,6 +344,10 @@ fieldset[disabled] .btn-category-4.active {
 
 .text-category-5 {
     color: #B49FFF;
+}
+
+.category-5 .activities .card-footer a {
+    color: #947AF0;
 }
 
 .text-category-5:hover,
@@ -392,6 +412,10 @@ fieldset[disabled] .btn-category-5.active {
     color: #E1E87B;
 }
 
+.category-6 .activities .card-footer a {
+    color: #D6E043;
+}
+
 .text-category-6:hover,
 .text-category-6:focus,
 .text-category-6:active,
@@ -452,6 +476,10 @@ fieldset[disabled] .btn-category-6.active {
 
 .text-category-7 {
     color: #84EBE4;
+}
+
+.category-7 .activities .card-footer a {
+    color: #60CCC5;
 }
 
 .text-category-7:hover,

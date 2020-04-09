@@ -52,8 +52,13 @@
                                        class="btn btn-category-{{ $category->id }}">{{ __('Try it!') }}</a>
                                 </div>
                                 <div class="card-footer text-muted text-right">
-                                    {{ __('Posted by:') }} <a
-                                        href="{{ route('userActivities', $activity->user->id) }}">{{ $activity->user->username }}</a>
+                                    <div class="float-left">
+                                        <a href="{{ route('activities.show', $activity->id) }}">{{ $activity->comments->count() }} {{ __('Comments') }}</a>
+                                    </div>
+                                    <div class="float-right">
+                                        {{ __('Posted by:') }} <a
+                                            href="{{ route('userActivities', $activity->user->id) }}">{{ $activity->user->username }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
