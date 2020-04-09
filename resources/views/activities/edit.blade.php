@@ -39,7 +39,7 @@
                             @foreach($categories as $category)
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="category_id"
-                                           id="category{{ $category->id }}" value="{{ $category->id }}" @if ($activity->category_id == $category->id) checked="checked" @endif required>
+                                           id="category{{ $category->id }}" value="{{ $category->id }}" @if ($activity->category_id == $category->id) checked="checked" @endif disabled required>
                                     <label class="form-check-label"
                                            for="category{{ $category->id }}">{{ ucwords($category->name) }}</label>
                                 </div>
@@ -49,9 +49,8 @@
                     </div>
                     <legend class="col-form-label col-sm-2 pt-0">Type</legend>
                     <div class="col-sm-4">
-                        @isset($types)
-
-                            @foreach($types as $type)
+                        @isset($categories)
+                            @foreach($activity->category->types as $type)
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="type_id" id="type{{ $type->id }}"
                                            value="{{ $type->id }}" @if ($activity->type_id == $type->id) checked="checked" @endif required>
@@ -75,7 +74,7 @@
             <div class="form-group row">
                 <div class="col-sm-10">
                     <a class="btn btn-secondary" href="{{ route('myActivities') }}">Abort</a>
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </form>
