@@ -44,7 +44,9 @@
                                     {{ $category->types->getDictionary()[$activity->type_id]->title }}
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $activity->title }}</h5>
+                                    <a href="{{ route('activities.show', $activity->id) }}"
+                                       class="text-decoration-none text-category-{{ $category->id }}"><h5
+                                            class="card-title">{{ $activity->title }}</h5></a>
                                     <p class="card-text">{{ $activity->content }}</p>
                                     <a href="{{ $activity->link }}" target="_blank"
                                        class="btn btn-category-{{ $category->id }}">{{ __('Try it!') }}</a>
