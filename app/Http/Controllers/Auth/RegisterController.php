@@ -50,11 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'min:4', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'min:4' ,'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'firstname' => ['nullable','string|max:100'],
-            'lastname' => ['nullable','string|max:100'],
+            'firstname' => ['nullable','string', 'max:100'],
+            'lastname' => ['nullable','string', 'max:100'],
         ]);
     }
 
@@ -67,11 +67,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-                'username' => $data['username'],
-                'email' => $data['email'],
-                'firstname' => $data['firstname'] ? $data['firstname'] : NULL,
-                'lastname' => $data['lastname'] ? $data['firstname'] : NULL,
-                'password' => Hash::make($data['password']),
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'firstname' => $data['firstname'] ? $data['firstname'] : NULL,
+            'lastname' => $data['lastname'] ? $data['firstname'] : NULL,
         ]);
     }
 }
