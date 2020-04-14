@@ -52,12 +52,12 @@
                                                class="btn btn-category-{{ $activity->category_id }}">{{ __('Go to:') }} {{ $activity->title }}</a>
                                         </div>
                                     </div>
-                                    @if($activity->category_id == 5 OR 1)
-                                    <div class="col-12 p-2 p-md-4">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe id="ytplayer" class="embed-responsive-item" type="text/html" src="https://www.youtube.com/embed/?listType=search&list={{ $activity->title }} Official Trailer&cc_load_policy=1&modestbranding=1&playsinline=1&color=white&iv_load_policy=3" allowfullscreen></iframe>
+                                    @if($activity->category_id == 5)
+                                        <div class="col-12 p-2 p-md-4">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe id="ytplayer" class="embed-responsive-item" type="text/html" src="https://www.youtube.com/embed/?listType=search&list={{ $activity->title }} Official Trailer&cc_load_policy=1&modestbranding=1&playsinline=1&color=white&iv_load_policy=3" allowfullscreen></iframe>
+                                            </div>
                                         </div>
-                                    </div>
                                     @endif
                                 </div>
                             </div>
