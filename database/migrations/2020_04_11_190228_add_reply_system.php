@@ -1,8 +1,9 @@
 <?php
 
-use App\Comment;
+use App\Activity;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class AddReplySystem extends Migration
@@ -28,7 +29,7 @@ class AddReplySystem extends Migration
             $activity_id = $result->activity()->id;
             $result->update([
                 'commentable_id' => $activity_id,
-                'commentable_type' => App\Activity::class
+                'commentable_type' => Activity::class
             ]);
         }
     }
