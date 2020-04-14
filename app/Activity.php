@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
+    protected $guarded = [];
+
     protected $fillable = [
         'title', 'content', 'link', 'category_id', 'type_id', 'user_id',
     ];
@@ -24,6 +26,6 @@ class Activity extends Model
     }
 
     public function comments() {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
     }
 }

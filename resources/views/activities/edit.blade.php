@@ -12,6 +12,23 @@
 @endsection
 @section('content')
     <div class="container p-5">
+
+        @if(session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/activities/{{ $activity->id }}" method="post">
         @csrf
         @method('PUT')
@@ -30,39 +47,25 @@
                            value="{{$activity->content }}" required>
                 </div>
             </div>
-            <fieldset class="form-group">
-                <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Category</legend>
-                    <div class="col-sm-4">
-                        @isset($categories)
-
-                            @foreach($categories as $category)
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="category_id"
-                                           id="category{{ $category->id }}" value="{{ $category->id }}" @if ($activity->category_id == $category->id) checked="checked" @endif disabled required>
-                                    <label class="form-check-label"
-                                           for="category{{ $category->id }}">{{ ucwords($category->name) }}</label>
-                                </div>
-                            @endforeach
-
-                        @endisset
-                    </div>
-                    <legend class="col-form-label col-sm-2 pt-0">Type</legend>
-                    <div class="col-sm-4">
-                        @isset($categories)
-                            @foreach($activity->category->types as $type)
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="type_id" id="type{{ $type->id }}"
-                                           value="{{ $type->id }}" @if ($activity->type_id == $type->id) checked="checked" @endif required>
-                                    <label class="form-check-label"
-                                           for="type{{ $type->id }}">{{ ucwords($type->title) }}</label>
-                                </div>
-                            @endforeach
-
-                        @endisset
-                    </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Category/Type</label>
+                <div id="categorySelectArea" class="col-sm-5">
+                    <select class="form-control" id="categorySelect" name="category_id">
+                        @foreach($categories as $category)
+                            <option id="categoryOption" value="{{ $category->id }}" data-types="{{ $category->types }}"
+                                    @if($activity->category_id == $category->id)selected @endif>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
-            </fieldset>
+                <div id="typeSelectArea" class="col-sm-5">
+                    <select class="form-control" id="typeSelect" name="type_id">
+                        @foreach($activity->category->types as $type)
+                            <option value="{{ $type->id }}"
+                                    @if($activity->type_id == $type->id)selected @endif>{{ $type->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="form-group row">
                 <label for="inputLink" class="col-sm-2 col-form-label">Link</label>
                 <div class="col-sm-10">

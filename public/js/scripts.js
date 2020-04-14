@@ -1,3 +1,7 @@
+if (typeof $ == 'undefined') {
+    var $ = jQuery;
+}
+
 /**
  * A simple forEach() implementation for Arrays, Objects and NodeLists
  * @private
@@ -19,6 +23,20 @@ var forEach = function (collection, callback, scope) {
     }
 };
 
+$('#categorySelect').change(function() {
+    var select = $('#categoryOption');
+    var types = select.data('types');
+
+    console.log(types)
+
+    var typeSelect = $('#typeSelect');
+    typeSelect.empty();
+
+    forEach(types, function(value, prop, obj) {
+        addTypeSelectOption('typeSelect', value['id'], value['title'])
+    });
+});
+
 /**
  * Adds a div checkbox child to a given element
  * @param element
@@ -36,8 +54,13 @@ function addTypeCheckBox(element, type_id, type_title) {
     document.getElementById(element).appendChild(div);
 }
 
-function removeElementFromParent(element, input) {
-    document.getElementById(element).removeChild(input.parentNode);
+function addTypeSelectOption(element, type_id, type_title) {
+    const optionElement = document.createElement('option');
+
+    optionElement.value = type_id;
+    optionElement.text = type_title;
+
+    document.getElementById(element).appendChild(optionElement);
 }
 
 $('#category_modal').on('show.bs.modal', function (event) {
@@ -60,12 +83,6 @@ $('#category_modal').on('show.bs.modal', function (event) {
 
     // Create type checkboxes
     forEach(types, function(value, prop, obj) {
-        addTypeCheckBox('typesArea', value['id'], value['title'] )
+        addTypeCheckBox('typesArea', value['id'], value['title'])
     });
-});
-
-$('#summernote').summernote({
-    placeholder: 'Hello Bootstrap 4',
-    tabsize: 2,
-    height: 100
 });

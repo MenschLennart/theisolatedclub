@@ -25,6 +25,7 @@ Route::resource('categories', 'CategoryController');
 
 // Comment
 Route::resource('comments', 'CommentController');
+Route::post('replies/store', 'CommentController@replyStore')->name('replies.store');
 
 // Profile
 Route::get('/user/{id}/activities', 'UserController@showUserActivities')->name('userActivities');

@@ -128,7 +128,7 @@ class ActivityController extends Controller
             ]);
         }
 
-        return redirect()->route('myActivities')->withErrors(['error' => 'You\'re not allowed!']);
+        return redirect()->back()->withErrors(['error' => 'You\'re not allowed!']);
     }
 
     /**
@@ -144,7 +144,7 @@ class ActivityController extends Controller
         $response = Gate::inspect('update-activity', $activity);
 
         if ($response->denied())
-            return redirect()->route('home')->withErrors(['error' => 'Permission denied!']);
+            return redirect()->back()->withErrors(['error' => 'Permission denied!']);
 
         try {
             $validateData = $this->validate($request, [
@@ -155,16 +155,15 @@ class ActivityController extends Controller
                 'link' => 'required|max:255',
             ]);
 
-            $activity = Activity::find($id);
             $activity->fill($validateData);
             $activity->save();
 
         } catch (\Throwable $e) {
             report($e);
-            return redirect()->route('myActivities')->withException($e);
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
 
-        return redirect()->route('myActivities')->with('status', 'Activity successfully updated!');
+        return redirect()->back()->with('status', 'Activity successfully updated!');
     }
 
     /**
@@ -185,9 +184,9 @@ class ActivityController extends Controller
             Activity::destroy($id);
         } catch (\Throwable $e) {
             report($e);
-            return redirect()->route('myActivities')->withException($e);
+            return redirect()->back()->withException($e);
         }
 
-        return redirect()->route('myActivities')->with('status', 'Activity successfully deleted!');
+        return redirect()->back()->with('status', 'Activity successfully deleted!');
     }
 }

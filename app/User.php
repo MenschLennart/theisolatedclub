@@ -39,10 +39,10 @@ class User extends Authenticatable
     ];
 
     public function activities() {
-        return $this->hasMany('App\Activity');
+        return $this->hasMany(Activity::class);
     }
 
     public function comments() {
-        return $this->hasMany(\App\Comment::class);
+        return $this->hasMany(Comment::class);
     }
 }

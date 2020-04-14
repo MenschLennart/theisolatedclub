@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Comment;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class CommentController extends Controller
     }
 
     /**
-     * Store activity into database
+     * Store comment into database
      *
      * @param Request $request
      * @return RedirectResponse
@@ -41,27 +42,69 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $response = Gate::inspect('create-comment');
+
         if($response->allowed()) {
             $validateData = $this->validate($request, [
-                'subject' => 'required|max:60',
-                'text' => 'required|max:5000',
+                'subject' => 'nullable', 'string', 'max:64',
+                'body' => 'required|max:3000',
                 'activity_id' => 'required', 'exists:App\Activity,id',
             ]);
 
             try {
                 $comment = new Comment();
                 $comment->fill($validateData);
+                $comment->user()->associate($request->user());
 
-                // Get user id
-                $comment->user_id = Auth()->id();
-                $comment->save();
+                $activity = Activity::find($request->activity_id);
+                $activity->comments()->save($comment);
 
             } catch (\Throwable $e) {
                 report($e);
-                return redirect()->route('home')->withErrors(['error' => 'Something went wrong. Reported.']);
+                return redirect()->back()->withErrors(['error' => $e->getMessage()]);
             }
 
-            return redirect()->route('activities.show', $comment->activity_id)->with('status', 'Comment successfully added!');
+            return redirect()->back()->with('status', 'Comment successfully created!');
+        }
+
+        return redirect()->route('login');
+    }
+
+    /**
+     * Store reply into database
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     * @throws ValidationException
+     */
+    public function replyStore(Request $request) {
+        $response = Gate::inspect('create-comment');
+
+        if($response->allowed()) {
+            $validateData = $this->validate($request, [
+                'subject' => 'nullable', 'string', 'max:64',
+                'body' => 'required|max:3000',
+                'activity_id' => 'required', 'exists:App\Activity,id',
+                'comment_id' => 'required', 'exists:App\Comment,id',
+            ]);
+
+            try {
+                $reply = new Comment();
+                $reply->fill($validateData);
+
+                // Associate user
+                $reply->user()->associate($request->user());
+
+                // Set comment id as parent
+                $reply->parent_id = $request->get('comment_id');
+
+                $activity = Activity::find($request->get('activity_id'));
+                $activity->comments()->save($reply);
+            } catch (\Throwable $e) {
+                report($e);
+                return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+            }
+
+            return redirect()->back()->with('status', 'Reply successfully created!');
         }
 
         return redirect()->route('login');

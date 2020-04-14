@@ -54,6 +54,33 @@ h1.colorful {
     border-radius: 4px;
 }
 
+/** Margin left to replies **/
+.comments .comments {
+    margin-left: 40px;
+}
+
+.replies {
+    padding: 10px;
+}
+
+.replies .user-area .card-text {
+    font-size: .675rem;
+}
+
+.replies .card-text {
+    font-size: 0.875rem;
+}
+
+.replies .card-footer {
+    font-size: .6rem;
+}
+
+.replies .comment-text {
+    background-color: #F7F7F7;
+    border: 1px solid #E2DCE1;
+    border-radius: 4px;
+}
+
 footer {
     font-size: .8rem;
     text-align: left;
