@@ -1,6 +1,5 @@
 <?php
 
-use App\Activity;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +15,6 @@ class AddReplySystem extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-           $table->renameColumn('replies_to', 'parent_id');
            $table->renameColumn('text', 'body');
            $table->integer('commentable_id')->unsigned();
            $table->string('commentable_type');
@@ -29,7 +27,7 @@ class AddReplySystem extends Migration
             $activity_id = $result->activity()->id;
             $result->update([
                 'commentable_id' => $activity_id,
-                'commentable_type' => Activity::class
+                'commentable_type' => 'App\Activity'
             ]);
         }
     }
